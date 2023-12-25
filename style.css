@@ -11,7 +11,7 @@
 	--fw-700: 700;
 	--fw-900: 900;
 
-	--fs-400: 0.875rem;
+	--fs-400: 0.75rem;
 	--fs-500: 1rem;
 	--fs-600: 2.75rem;
 	--fs-700: 3.75rem;
@@ -67,8 +67,7 @@ body {
 	min-height: 100dvh;
 	font-family: var(--ff-epilogue);
 	font-size: 18px;
-	overflow: hidden;
-	margin-inline: auto;
+	overflow-x: hidden;
 }
 
 /* A elements that don't have a class get default styles */
@@ -191,11 +190,11 @@ select {
 .icons {
 	display: flex;
 	align-items: center;
-	justify-content: start;
+	justify-content: space-between;
 	gap: 1.25em;
 }
 .icons > img {
-	width: clamp(60px, 100%, 100px);
+	width: clamp(60px, 100%, 80px);
 	height: auto;
 }
 
@@ -203,11 +202,21 @@ select {
 	width: clamp(350px, 100%, 480px);
 	height: auto;
 	margin: auto;
+	object-fit: cover;
+	object-position: center;
+}
+
+.mobile-image {
+	display: none;
+}
+.desktop-image {
+	display: block;
 }
 
 .hero-content-section {
 	display: grid;
 	grid-template-rows: 1fr auto;
+	gap: 2.5em;
 	justify-content: center;
 	align-items: center;
 	width: clamp(300px, 100%, 520px);
@@ -218,7 +227,7 @@ select {
 }
 
 .hero-title {
-	font-size: clamp(var(--fs-600), 6vw + 1rem, var(--fs-700));
+	font-size: clamp(var(--fs-500), 5vw + 1rem, var(--fs-700));
 	font-weight: var(--fw-900);
 	line-height: 1.2;
 }
@@ -235,9 +244,9 @@ select {
 .primary-btn {
 	background-color: var(--almost-black);
 	color: var(--almost-white);
-	padding-inline: 1.5em;
-	padding-block: 1em;
-
+	padding-inline: clamp(1em, 2vw + 1rem, 1.5em);
+	padding-block: clamp(0.75em, 2vw + 1rem, 1em);
+	font-size: clamp(var(--fs-400), 2vw + 1rem, var(--fs-500));
 	outline: 0;
 	border: 0;
 	border-radius: 0.45em;
@@ -247,8 +256,12 @@ select {
 }
 
 .secondary-btn {
-	padding-inline: 1.25em;
-	padding-block: 0.75em;
+	/* padding-inline: 1.25em;
+	padding-block: 0.75em; */
+
+	padding-inline: clamp(1em, 1vw + 0.5rem, 1.25em);
+	padding-block: clamp(0.5em, 1vw + 0.5rem, 0.75em);
+	font-size: clamp(var(--fs-400), 2vw + 1rem, var(--fs-500));
 	color: var(--almost-black);
 	background-color: transparent;
 	outline: 0;
@@ -266,4 +279,99 @@ select {
 	background-color: var(--almost-white);
 	color: var(--almost-black);
 	border: 1px solid var(--almost-black);
+}
+
+.mobile-menu-icon {
+	display: none;
+}
+
+@media (max-width: 800px) {
+	.container {
+		padding-inline: 0;
+		height: 100dvh;
+		min-width: 375px;
+	}
+	.hero-section {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mobile-image {
+		display: block;
+	}
+	.desktop-image {
+		display: none;
+	}
+
+	.hero-image {
+		/* width: clamp(300px, 100%, 100dvw); */
+		width: 100%;
+		height: auto;
+	}
+
+	.nav-bar {
+		/* display: none; */
+
+		background-color: white;
+		position: absolute;
+		inset: 0 0 0 30%;
+
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+		padding-block-start: 10em;
+		padding-inline-start: 2em;
+	}
+
+	.nav-links {
+		flex-direction: column;
+	}
+
+	.sub-nav {
+		padding: 1.5em;
+
+		position: relative;
+		box-shadow: none;
+	}
+
+	.icons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 2em;
+		padding-block-end: 3em;
+	}
+
+	.icons > img {
+		/* margin-block-start: 2em; */
+		width: clamp(35px, 100%, 60px);
+		height: auto;
+	}
+
+	.hero-content-section {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		justify-content: center;
+		align-items: center;
+		width: clamp(250px, 100%, 100dvh);
+		text-align: center;
+		padding-inline: 1.75em;
+	}
+
+	.nav-header {
+		padding-inline: 1.75em;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.mobile-menu-icon {
+		display: block;
+		cursor: pointer;
+	}
+
+	.mobile-menu {
+	}
 }

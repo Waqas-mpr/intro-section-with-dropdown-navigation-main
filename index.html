@@ -18,8 +18,50 @@
       <img class="logo" src="images/logo.svg" alt="">
       <nav class="nav-bar">
         <ul class="nav-links list-deco">
-          <li class="link"><a href="#">Features <img class="inline-d" src="images/icon-arrow-down.svg" alt=""></a></li>
-          <li class="link"><a href="#">Company <img class="inline-d" src="images/icon-arrow-down.svg" alt=""></a></li>
+          <li class="link dropdown">
+            <a href="#">Features
+              <img class="inline-display toggle-ui ‌" src="images/icon-arrow-up.svg" alt="">
+              <img class="inline-display " src="images/icon-arrow-down.svg" alt="">
+            </a>
+
+
+            <div class="toggle-ui">
+
+              <ul class="sub-nav">
+                <li class="link"><a href="#">
+                    <img class="inline-display margin-inline-end" src="images/icon-todo.svg" alt="">Todo List</a>
+                </li>
+                <li class="link"><a href="#">
+                    <img class="inline-display margin-inline-end" src="images/icon-calendar.svg" alt="">Calendar</a>
+                </li>
+                <li class="link"><a href="#">
+                    <img class="inline-display margin-inline-end" src="images/icon-reminders.svg" alt="">Remainders</a>
+                </li>
+                <li class="link"><a href="#">
+                    <img class="inline-display margin-inline-end" src="images/icon-planning.svg" alt="">Planning</a>
+                </li>
+              </ul>
+
+            </div>
+
+          </li>
+          <li class="link dropdown">
+            <a href="#">Company
+              <img class="inline-display toggle-ui ‌" src="images/icon-arrow-up.svg" alt="">
+              <img class="inline-display " src="images/icon-arrow-down.svg" alt="">
+            </a>
+
+            <div class="toggle-ui ">
+
+              <ul class="sub-nav">
+                <li class="link"><a href="#">History</a></li>
+                <li class="link"><a href="#">Our Team</a></li>
+                <li class="link"><a href="#">Blog</a></li>
+
+              </ul>
+            </div>
+
+          </li>
           <li class="link"><a href="#">Careers</a></li>
           <li class="link"><a href="#">About</a></li>
         </ul>
@@ -51,6 +93,8 @@
     </section>
 
   </main>
+
+  <script src="app.js"></script>
 </body>
 
 </html>

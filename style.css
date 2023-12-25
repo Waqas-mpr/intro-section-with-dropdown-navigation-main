@@ -118,8 +118,12 @@ select {
 	padding-inline: 2em;
 	margin-inline: auto;
 }
-.inline-d {
+.inline-display {
 	display: inline-block;
+}
+
+.margin-inline-end {
+	margin-inline-end: 1em;
 }
 .nav-header {
 	display: grid;
@@ -143,6 +147,23 @@ select {
 	display: flex;
 	align-items: center;
 	gap: 2em;
+	position: relative;
+}
+
+.sub-nav {
+	padding: 1.5em;
+	background-color: white;
+	display: grid;
+	gap: 1em;
+	position: absolute;
+	list-style: none;
+	border-radius: 0.3em;
+	margin-block-start: 1em;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.toggle-ui {
+	display: none;
 }
 
 .list-deco {

@@ -14,63 +14,52 @@
 
 <body>
   <main class="container">
-    <header class="nav-header">
-      <img class="logo" src="images/logo.svg" alt="">
-      <div class="mobile-menu-icon">
-        <img src="images/icon-menu.svg" alt="">
-      </div>
-      <nav class="nav-bar">
-        <ul class="nav-links list-deco">
-          <li class="link dropdown">
-            <a href="#">Features
-              <img class="inline-display toggle-ui ‌" src="images/icon-arrow-up.svg" alt="">
-              <img class="inline-display" src="images/icon-arrow-down.svg" alt="">
+    <header>
+
+      <nav>
+        <ul class="menu">
+          <li class="logo">
+            <a href="#"> <img class="logo" src="images/logo.svg" alt=""></a>
+          </li>
+
+          <li class="item has-submenu">
+            <a tabindex="0" href="#">Features
+              <!-- <img src="images/icon-arrow-up.svg" alt="">
+              <img src="images/icon-arrow-down.svg" alt=""> -->
+            </a>
+            <ul class="submenu">
+              <li class="subitem"><a href="#">Todo List</a></li>
+              <li class="subitem"><a href="#">Calendar</a></li>
+              <li class="subitem"><a href="#">Reminders</a></li>
+              <li class="subitem"><a href="#">Planning</a></li>
+            </ul>
+          </li>
+
+          <li class="item has-submenu">
+            <a tabindex="0" href="#">Company
+              <!-- <img src="images/icon-arrow-up.svg" alt="">
+              <img src="images/icon-arrow-down.svg" alt=""> -->
             </a>
 
 
-            <div class="toggle-ui">
+            <ul class="submenu">
+              <li class="subitem"><a href="#">History</a></li>
+              <li class="subitem"><a href="#">Our Team</a></li>
+              <li class="subitem"><a href="#">Blog</a></li>
 
-              <ul class="sub-nav">
-                <li class="link"><a href="#">
-                    <img class="inline-display margin-inline-end" src="images/icon-todo.svg" alt="">Todo List</a>
-                </li>
-                <li class="link"><a href="#">
-                    <img class="inline-display margin-inline-end" src="images/icon-calendar.svg" alt="">Calendar</a>
-                </li>
-                <li class="link"><a href="#">
-                    <img class="inline-display margin-inline-end" src="images/icon-reminders.svg" alt="">Remainders</a>
-                </li>
-                <li class="link"><a href="#">
-                    <img class="inline-display margin-inline-end" src="images/icon-planning.svg" alt="">Planning</a>
-                </li>
-              </ul>
-
-            </div>
+            </ul>
 
           </li>
-          <li class="link dropdown">
-            <a href="#">Company
-              <img class="inline-display toggle-ui ‌" src="images/icon-arrow-up.svg" alt="">
-              <img class="inline-display " src="images/icon-arrow-down.svg" alt="">
-            </a>
 
-            <div class="toggle-ui ">
+          <li class="item"><a href="#">Careers</a></li>
+          <li class="item"><a href="#">About</a></li>
 
-              <ul class="sub-nav">
-                <li class="link"><a href="#">History</a></li>
-                <li class="link"><a href="#">Our Team</a></li>
-                <li class="link"><a href="#">Blog</a></li>
-
-              </ul>
-            </div>
-
+          <li class="item btn"><a href="#">Login</a></li>
+          <li class="item btn"><a href="#">Register</a></li>
+          <li class="toggle"><a href="#">
+              <img class="icon-open-menu" src="images/icon-menu.svg" alt="">
+              <img class="icon-close-menu d-none" src="images/icon-close-menu.svg" alt=""></a>
           </li>
-          <li class="link"><a href="#">Careers</a></li>
-          <li class="link"><a href="#">About</a></li>
-        </ul>
-        <ul class="nav-links list-deco">
-          <li class="link"><a href="#">Login</a></li>
-          <li class="link secondary-btn"><a href="#">Register</a></li>
         </ul>
       </nav>
     </header>

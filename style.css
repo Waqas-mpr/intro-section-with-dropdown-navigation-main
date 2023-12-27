@@ -124,58 +124,107 @@ select {
 .margin-inline-end {
 	margin-inline-end: 1em;
 }
-.nav-header {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	align-items: center;
-	justify-content: center;
-	gap: 3em;
-	padding-block: 2em;
+
+nav {
+	background-color: lightpink;
+	padding: 20px 15px;
+}
+
+a {
+	color: var(--medium-gray);
+	text-decoration: none;
 }
 
 .logo {
 }
+.item {
+	padding: 10px;
+}
+.menu,
+.submenu {
+	list-style-type: none;
+}
+.item .btn {
+	padding: 9px 5px;
+}
 
-.nav-bar {
+.item:not(.btn) a:hover,
+.item a:hover::after {
+	color: var(--almost-black);
+}
+
+/* Mobile Menu */
+
+.menu-bar {
+	display: none;
+}
+.menu {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	align-items: center;
 }
 
-.nav-links {
-	display: flex;
-	align-items: center;
-	gap: 2em;
-	position: relative;
+.menu li a {
+	display: block;
+	padding: 15px 5px;
+}
+.menu li.subitem a {
+	padding: 15px;
 }
 
-.sub-nav {
-	padding: 1.5em;
-	background-color: white;
-	display: grid;
-	gap: 1em;
-	position: absolute;
-	list-style: none;
-	border-radius: 0.3em;
-	margin-block-start: 1em;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.toggle {
+	order: 1;
 }
 
-.toggle-ui {
+.item.btn {
+	order: 2;
+}
+
+.item {
+	order: 3;
+	width: 100%;
+	text-align: center;
 	display: none;
 }
 
-.list-deco {
-	list-style: none;
+.active .item {
+	display: block;
 }
-.link > a {
-	text-decoration: none;
-	color: var(--medium-gray);
-	font-size: var(--fs-400);
-	font-weight: var(--fw-700);
+
+.submenu {
+	display: none;
 }
-.link > a:hover {
-	color: var(--almost-black);
+
+.submenu-active .submenu {
+	display: block;
+}
+.has-submenu > a::after {
+}
+
+.subitem a {
+	padding: 10px 15px;
+}
+
+.submenu-active {
+	background-color: red;
+}
+
+/* tablet menu */
+
+@media all and (min-width: 700px) {
+	.menu {
+		justify-content: center;
+	}
+
+	.logo {
+		flex: 1;
+	}
+	.item.btn {
+		width: auto;
+		order: 1;
+		display: block;
+	}
 }
 .hero-section {
 	display: grid;
@@ -196,6 +245,10 @@ select {
 .icons > img {
 	width: clamp(40px, 100%, 70px);
 	height: auto;
+}
+
+.d-none {
+	display: none;
 }
 
 .hero-image {

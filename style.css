@@ -182,7 +182,7 @@ a {
 /* mobile */
 .menu {
 	position: fixed;
-	inset: 0 0 0 40%;
+	inset: 0 0 0 35%;
 	padding-block-start: 5rem;
 	background-color: white;
 	display: none;
@@ -477,7 +477,7 @@ a {
 	}
 
 	.icons img {
-		width: clamp(70px, 100%, 100px);
+		width: clamp(60px, 100%, 90px);
 		height: auto;
 		object-fit: contain;
 	}

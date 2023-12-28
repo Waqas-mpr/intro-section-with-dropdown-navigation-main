@@ -118,13 +118,22 @@ select {
 	width: 100%;
 	padding-inline: 2em;
 	margin-inline: auto;
+	padding-block-end: 3em;
 }
 .d-none {
 	display: none;
 }
 
+.strict {
+	white-space: pre;
+}
+
 .d-inline {
 	display: inline-block;
+}
+
+br {
+	display: none;
 }
 
 .navigation {
@@ -160,8 +169,7 @@ a {
 	padding: 9px 5px;
 }
 
-.item:not(.btn) a:hover,
-.item a:hover::after {
+.item a:hover {
 	color: var(--almost-black);
 }
 
@@ -238,27 +246,28 @@ a {
 	font-size: clamp(var(--fs-400), 2vw + 1rem, var(--fs-500));
 	outline: 0;
 	border: 0;
-	border-radius: 0.45em;
+	border-radius: 1em;
 	border: 1px solid transparent;
 
 	cursor: pointer;
 }
 
 .secondary-btn {
-	padding-inline: clamp(1em, 1vw + 0.5rem, 1.25em);
-	padding-block: clamp(0.5em, 1vw + 0.5rem, 0.75em);
+	padding-inline: 1.5rem;
+	padding-block: 0.25rem;
 	font-size: clamp(var(--fs-400), 2vw + 1rem, var(--fs-500));
-	color: var(--almost-black);
+	color: var(--medium-gray);
 	background-color: transparent;
 	outline: 0;
 	border: 0;
 	border: 0.025em solid var(--medium-gray);
-	border-radius: 0.45em;
+	border-radius: 1em;
 	cursor: pointer;
 }
 
 .secondary-btn:hover {
-	border: 0.05em solid var(--almost-black);
+	border: 0.07em solid var(--almost-black);
+	color: var(--almost-black);
 }
 
 .primary-btn:hover {
@@ -296,13 +305,15 @@ a {
 
 .icons {
 	display: flex;
-	justify-content: space-between;
-	flex-shrink: 1;
+	justify-content: start;
+	gap: 2em;
 }
-.icons > img {
-	width: clamp(40px, 100%, 70px);
+.icons img {
+	max-width: 90px;
+	width: min-content;
 	height: auto;
 }
+
 .hero-image {
 	width: clamp(300px, 100%, 100dvw);
 }
@@ -340,15 +351,18 @@ a {
 	.hero-title {
 		grid-column: 1;
 		grid-row: span 2;
+		text-align: left;
 	}
 	.hero-subtitle,
 	.primary-btn {
 		grid-column: 2;
 	}
+	.hero-subtitle {
+		text-align: left;
+	}
 
 	.primary-btn {
 		width: fit-content;
-		margin-inline: auto;
 	}
 
 	.icons {
@@ -417,7 +431,7 @@ a {
 		gap: 5rem;
 		max-height: 600px;
 		padding-inline: 2rem;
-		margin-block-start: 2rem;
+		padding-block-start: 5rem;
 	}
 
 	.hero-content-section {
@@ -449,6 +463,10 @@ a {
 
 	.icons {
 		justify-content: start;
-		gap: 2rem;
+		gap: 2.5rem;
+	}
+
+	br {
+		display: block;
 	}
 }

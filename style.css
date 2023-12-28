@@ -255,7 +255,6 @@ a {
 	border: 0.025em solid var(--medium-gray);
 	border-radius: 0.45em;
 	cursor: pointer;
-	/* margin-block-start: 0.5rem; */
 }
 
 .secondary-btn:hover {

@@ -446,4 +446,9 @@ a {
 		width: clamp(350px, 100%, 400px);
 		height: auto;
 	}
+
+	.icons {
+		justify-content: start;
+		gap: 2rem;
+	}
 }

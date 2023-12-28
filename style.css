@@ -256,8 +256,9 @@ a {
 	display: flex;
 	flex-direction: column-reverse;
 	gap: 3rem;
-
-	margin-block-start: 1rem;
+	max-width: var(--hero-container-width);
+	width: 100%;
+	margin-inline: auto;
 }
 
 .hero-content-section {
@@ -303,6 +304,41 @@ a {
 	text-align: center;
 }
 
+.hero-image {
+	width: clamp(350px, 100%, 100dvw);
+	height: auto;
+	margin: auto;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media all and (min-width: 700px) {
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+	}
+
+	.hero-title {
+		grid-column: 1;
+		grid-row: span 2;
+	}
+	.hero-subtitle,
+	.primary-btn {
+		grid-column: 2;
+	}
+
+	.primary-btn {
+		width: fit-content;
+		margin-inline: auto;
+	}
+
+	.icons {
+		justify-content: space-evenly;
+		width: 100%;
+	}
+}
+
 @media all and (min-width: 1024px) {
 	.toggle {
 		display: none;
@@ -331,11 +367,6 @@ a {
 	.right {
 		gap: 2rem;
 	}
-	.right {
-	}
-
-	.item {
-	}
 
 	.has-submenu {
 		position: relative;
@@ -352,5 +383,50 @@ a {
 
 	.menu {
 		flex: 1;
+	}
+
+	.desktop-image {
+		display: block;
+	}
+
+	.mobile-image {
+		display: none;
+	}
+
+	.hero-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		align-items: end;
+		gap: 5rem;
+
+		padding-inline: 2rem;
+	}
+
+	.hero-content-section {
+		grid-template-rows: repeat(3, 1fr);
+		justify-content: center;
+		align-items: start;
+	}
+
+	.hero-title {
+		grid-column: span 2;
+		grid-row: 1;
+		text-align: start;
+	}
+	.hero-subtitle {
+		grid-column: span 2;
+		grid-row: 2;
+		text-align: start;
+	}
+	.primary-btn {
+		grid-column: span 2;
+		grid-row: 3;
+		margin: unset;
+	}
+
+	.hero-image {
+		width: clamp(350px, 100%, 480px);
+		height: auto;
 	}
 }

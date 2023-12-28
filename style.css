@@ -3,6 +3,7 @@
 	--almost-white: hsl(0, 0%, 98%);
 	--medium-gray: hsl(0, 0%, 41%);
 	--almost-black: hsl(0, 0%, 8%);
+	--almost-black-transparant: hsl(0, 0%, 8%, 0.3);
 
 	--ff-epilogue: "Epilogue", sans-serif;
 
@@ -129,7 +130,7 @@ select {
 .navigation {
 	display: flex;
 	justify-content: space-between;
-	align-items: start;
+	align-items: center;
 
 	position: relative;
 }
@@ -141,15 +142,17 @@ nav {
 a {
 	color: var(--medium-gray);
 	text-decoration: none;
+	display: block;
 }
 .item {
-	padding: 10px;
+	/* padding: 15px; */
+
+	padding-inline: clamp(1em, 1vw + 0.5rem, 1.25em);
+	padding-block: clamp(0.5em, 1vw + 0.5rem, 0.75em);
 }
 
 .item:not(.btn) a {
 	font-size: clamp(var(--fs-400), 2vw + 1rem, var(--fs-500));
-	padding-block-end: 0.75rem;
-	display: block;
 }
 
 .item .btn {
@@ -233,7 +236,7 @@ a {
 	border: 0.025em solid var(--medium-gray);
 	border-radius: 0.45em;
 	cursor: pointer;
-	margin-block-start: 0.5rem;
+	/* margin-block-start: 0.5rem; */
 }
 
 .secondary-btn:hover {
@@ -262,7 +265,14 @@ a {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	gap: 2rem;
+	gap: 3rem;
+}
+
+.hero-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .icons {
@@ -281,6 +291,7 @@ a {
 	font-size: clamp(var(--fs-400), 2vw + 2rem, var(--fs-700));
 	font-weight: var(--fw-900);
 	line-height: 1.2;
+	text-align: center;
 }
 
 .hero-subtitle {
@@ -288,6 +299,58 @@ a {
 	color: var(--medium-gray);
 	line-height: 1.75;
 	width: clamp(300px, 100%, 425px);
-
 	margin-block: clamp(1rem, 4vw + 1rem, 2.75rem);
+	text-align: center;
+}
+
+@media all and (min-width: 1024px) {
+	.toggle {
+		display: none;
+	}
+
+	.navigation {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		justify-content: center;
+		gap: 5rem;
+	}
+
+	.menu,
+	.left,
+	.right {
+		display: flex;
+		position: static;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0;
+		margin: 0;
+	}
+
+	.left,
+	.right {
+		gap: 2rem;
+	}
+	.right {
+	}
+
+	.item {
+	}
+
+	.has-submenu {
+		position: relative;
+	}
+
+	.submenu {
+		position: absolute;
+		background-color: white;
+		padding: 1.25rem;
+		border-radius: 0.5rem;
+		box-shadow: 1rem 1rem 2rem var(--almost-black-transparant);
+		inset-block-start: 50px;
+	}
+
+	.menu {
+		flex: 1;
+	}
 }

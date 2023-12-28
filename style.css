@@ -135,6 +135,11 @@ select {
 	position: relative;
 }
 
+.subitem img {
+	display: inline-block;
+	margin-inline-end: 0.75rem;
+}
+
 nav {
 	padding-block: 20px;
 }
@@ -142,13 +147,9 @@ nav {
 a {
 	color: var(--medium-gray);
 	text-decoration: none;
-	display: block;
 }
 .item {
-	/* padding: 15px; */
-
-	padding-inline: clamp(1em, 1vw + 0.5rem, 1.25em);
-	padding-block: clamp(0.5em, 1vw + 0.5rem, 0.75em);
+	padding: 15px;
 }
 
 .item:not(.btn) a {
@@ -177,6 +178,24 @@ a {
 	padding-block-start: 5rem;
 	background-color: white;
 	display: none;
+}
+
+.subitem a {
+	display: block;
+	padding: 10px 15px;
+}
+
+.subitem a:nth-child(1) {
+	padding-block-start: 30px;
+}
+
+.menu li a {
+	display: block;
+	padding: 10px 5px;
+}
+
+.menu li.subitem a {
+	padding: 15px;
 }
 
 .active {
@@ -350,6 +369,7 @@ a {
 		align-items: center;
 		justify-content: center;
 		gap: 5rem;
+		position: relative;
 	}
 
 	.menu,
@@ -368,17 +388,14 @@ a {
 		gap: 2rem;
 	}
 
-	.has-submenu {
-		position: relative;
-	}
-
 	.submenu {
 		position: absolute;
 		background-color: white;
-		padding: 1.25rem;
+		width: fit-content;
+		padding: 1rem;
 		border-radius: 0.5rem;
 		box-shadow: 1rem 1rem 2rem var(--almost-black-transparant);
-		inset-block-start: 50px;
+		inset-block-start: 80px;
 	}
 
 	.menu {
@@ -399,13 +416,14 @@ a {
 		justify-content: start;
 		align-items: end;
 		gap: 5rem;
-
+		max-height: 600px;
 		padding-inline: 2rem;
+		margin-block-start: 2rem;
 	}
 
 	.hero-content-section {
 		grid-template-rows: repeat(3, 1fr);
-		justify-content: center;
+		justify-content: space-between;
 		align-items: start;
 	}
 
@@ -426,7 +444,7 @@ a {
 	}
 
 	.hero-image {
-		width: clamp(350px, 100%, 480px);
+		width: clamp(350px, 100%, 400px);
 		height: auto;
 	}
 }

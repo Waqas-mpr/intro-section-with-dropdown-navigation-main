@@ -306,12 +306,12 @@ a {
 .icons {
 	display: flex;
 	justify-content: start;
-	gap: 2em;
+	gap: 1em;
 }
 .icons img {
-	max-width: 90px;
-	width: min-content;
+	width: clamp(40px, 100%, 60px);
 	height: auto;
+	object-fit: contain;
 }
 
 .hero-image {
@@ -368,6 +368,12 @@ a {
 	.icons {
 		justify-content: space-evenly;
 		width: 100%;
+	}
+
+	.icons img {
+		width: clamp(60px, 100%, 100px);
+		height: auto;
+		object-fit: contain;
 	}
 }
 
@@ -468,5 +474,11 @@ a {
 
 	br {
 		display: block;
+	}
+
+	.icons img {
+		width: clamp(70px, 100%, 100px);
+		height: auto;
+		object-fit: contain;
 	}
 }
